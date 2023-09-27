@@ -7,7 +7,7 @@ import { MaterialCommunityIcons, Ionicons, FontAwesome } from 'react-native-vect
 import Home from './src/pags/home/index';
 import Pergunta from './src/pags/Pergunta/index';
 import CarroselLarissa from './src/pags/carroselLarissa/index'
-import CarroselFotosJuntas from './src/pags/CarroselJuntos/index';
+import CarroselJuntos from './src/pags/CarroselJuntos/index';
 
 export default function App() {
 
@@ -39,7 +39,7 @@ export default function App() {
 
         <Tab.Screen 
           name='CarroselFotosNossas' 
-          component={CarroselFotosJuntas} 
+          component={CarroselJuntos} 
           options={{tabBarIcon: () => (<Text><MaterialCommunityIcons name='view-carousel-outline' size= {25} color='#fff'/></Text>)}}
         />
 
