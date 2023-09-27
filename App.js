@@ -1,8 +1,7 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text} from 'react-native';
 import { NavigationContainer} from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
-import  AntDesgin  from 'react-native-vector-icons/AntDesign';
+import { MaterialCommunityIcons } from 'react-native-vector-icons'
 import Home from './src/pags/home/index';
 
 export default function App() {
