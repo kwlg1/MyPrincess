@@ -1,15 +1,20 @@
 import React from 'react';
-import { StatusBar, View } from 'react-native';
+import { StatusBar, StyleSheet,View } from 'react-native';
 
-export default function carroselLarissa() {
+export default function  CarroselLarissa() {
  return (
-   <View>
+   <View style={styles.container}>
     <StatusBar style= "auto"/>
-    
+    <Text>Carrosel de fotos da Larissa</Text>
    </View>
   );
 }
 
-import styled from 'styled-components/native';
-
-export const Container = styled.View``;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor:'#facac0',
+    alignItems: 'center',
+    justifyContent: 'center'
+  }
+});
