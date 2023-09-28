@@ -4,7 +4,7 @@ import { StyleSheet, StatusBar, View, Text, Image, ScrollView} from 'react-nativ
 export default function Home() {
  return (
    <View style={styles.container}>
-    <StatusBar style='auto'/>
+    <StatusBar backgroundColor='#000'/>
     <Image style={styles.Image} source={require('../../fotos/MyPrincess/MyPrincessHome.jpg')}></Image>
     <Text style={styles.TextDedicatoria}>De: Klêvson</Text>
     <Text style={styles.TextDedicatoria}>Para: Larissa</Text>
