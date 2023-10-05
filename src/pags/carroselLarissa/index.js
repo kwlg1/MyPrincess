@@ -3,13 +3,27 @@ import { StatusBar, StyleSheet,View, Text, ScrollView, Image, Animated } from 'r
 
 export default function  CarroselLarissa() {
   let foto = [
-    {id: "1", image: require('../../fotos/MyPrincess/FotoLarissa1.jpg')}
+    {id: "1", image: require('../../fotos/MyPrincess/FotoLarissa1.jpg')},
+    {id: "2", image: require('../../fotos/MyPrincess/FotoLarissa2.jpg')},
+    {id: "3", image: require('../../fotos/MyPrincess/FotoLarissa3.jpg')},
+    {id: "4", image: require('../../fotos/MyPrincess/FotoLarissa4.jpg')},
+    {id: "5", image: require('../../fotos/MyPrincess/FotoLarissa5.jpg')},
+    {id: "6", image: require('../../fotos/MyPrincess/FotoLarissa6.jpg')},    
   ]
  return (
    <View style={styles.container}>
     <StatusBar backgroundColor='#000'/>
-    <ScrollView style={styles.Scroll}>
+    <ScrollView 
+      style={styles.Scroll}
+      horizontal={true}
+      showsHorizontalScrollIndicator={false}
+      >
       <Image style={styles.Image} source={foto[0].image}></Image>
+      <Image style={styles.Image} source={foto[1].image}></Image>
+      <Image style={styles.Image} source={foto[2].image}></Image>
+      <Image style={styles.Image} source={foto[3].image}></Image>
+      <Image style={styles.Image} source={foto[4].image}></Image>
+      <Image style={styles.Image} source={foto[5].image}></Image>
     </ScrollView>
    </View>
   );
@@ -23,16 +37,18 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   Scroll: {
-    width: "80%",
-    height: 200,
-
+    marginLeft: 50,
+    marginRight: 50,
+    paddingTop: 65,
+    paddingBottom: 50,
   },
   Image: {
-    marginLeft: "auto",
-    marginRight:"auto",
     marginTop: 20,
-    height: 350,
-    width: 270,
-    //resizeMode: 'stretch',
+    height: 450,
+    width: 300,
+    margin: 10,
+    borderWidth: 4,
+    borderColor: "#fff",
+    borderRadius: 20,
   },
 });
