@@ -37,10 +37,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   Scroll: {
-    marginLeft: 50,
-    marginRight: 50,
-    paddingTop: 65,
-    paddingBottom: 50,
+    height: 400,
+    width: 330,
+    paddingTop: 110,
   },
   Image: {
     marginTop: 20,
