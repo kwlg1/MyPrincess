@@ -1,27 +1,29 @@
-import React from "react";
-import { StatusBar, StyleSheet, View, Text, TouchableOpacity, Image } from "react-native";
+import React, { useState } from "react";
+import { StatusBar, StyleSheet, View, Text, TouchableOpacity, Image, Animated } from "react-native";
 
 export default function Pergunta() {
   let Girassol = require('../../fotos/MyPrincess/girassol.png')
+  
+  const [marginLeft, setMarginLeft] = useState(120)
+  const [marginTop, setMarginTop ] = useState(0)
+
   return (
     <View style={styles.container}>
       <Image style={styles.Girassol} source={Girassol}></Image>
       <StatusBar style="auto" />
       <View style={styles.pergunta}>
-        <Text style={styles.TextPergunta}>Me aceita para o resto da sua vida?</Text>
+        <Text style={styles.TextPergunta}>
+          Me aceita para o resto da sua vida?
+        </Text>
       </View>
 
-      <View style={{flexDirection: "row"}}>
-        <TouchableOpacity
-          style={[styles.Botoes, {marginLeft: 100}]}
-        >
-          <Text style={[styles.TextPergunta, {color: '#FFF'}]}>sim</Text>
+      <View style={{ flexDirection: "row" }}>
+        <TouchableOpacity style={[styles.Botoes, { marginLeft: 60 }]}>
+          <Text style={[styles.TextPergunta, { color: "#FFF" }]}>sim</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity
-          style={[styles.Botoes, {marginLeft: 20}]}
-        >
-          <Text style={[styles.TextPergunta, {color: '#FFF'}]}>não</Text>
+        <TouchableOpacity style={[styles.Botoes, { marginLeft: marginLeft, position: "absolute" }]}>
+          <Text style={[styles.TextPergunta, { color: "#FFF" }]}>não</Text>
         </TouchableOpacity>
       </View>
 
