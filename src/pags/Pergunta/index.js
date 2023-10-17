@@ -1,16 +1,34 @@
 import React, { useState } from "react";
-import { StatusBar, StyleSheet, View, Text, TouchableOpacity, Image, Animated } from "react-native";
+import { StatusBar, StyleSheet, View, Text, TouchableOpacity, Image, Animated, Modal } from "react-native";
 
+import PressSim from '../../pags/PressSim/index'
 export default function Pergunta() {
   let Girassol = require('../../fotos/MyPrincess/girassol.png')
   
   const [marginLeft, setMarginLeft] = useState(120)
   const [marginTop, setMarginTop ] = useState(0)
+  const [visualizarModal, setVisualizarModal] = useState(false);
 
+  function BntSim(){
+    setMarginLeft(120)
+    setMarginTop(0)
+    setVisualizarModal(true)
+  }
+
+  function fecharModal(){
+    setVisualizarModal(false)
+  }
+
+  function mudarPosBnt(){
+    let posicaoLeft = Math.floor(Math.random() * (190 - (-130)) + (-130))
+    let posicaoTop = Math.floor(Math.random() * (310 - (-370)) + (-370))
+    setMarginLeft(posicaoLeft)
+    setMarginTop(posicaoTop)
+  }
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, {opacity: visualizarModal == true? 0.2: null}]}>
       <Image style={styles.Girassol} source={Girassol}></Image>
-      <StatusBar style="auto" />
+      <StatusBar backgroundColor='#000'/>
       <View style={styles.pergunta}>
         <Text style={styles.TextPergunta}>
           Me aceita para o resto da sua vida?
@@ -18,16 +36,27 @@ export default function Pergunta() {
       </View>
 
       <View style={{ flexDirection: "row" }}>
-        <TouchableOpacity style={[styles.Botoes, { marginLeft: 60 }]}>
+        <TouchableOpacity 
+        style={[styles.Botoes, { marginLeft: 60 }]}
+        onPress={() => BntSim()}
+        >
           <Text style={[styles.TextPergunta, { color: "#FFF" }]}>sim</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={[styles.Botoes, { marginLeft: marginLeft, position: "absolute" }]}>
-          <Text style={[styles.TextPergunta, { color: "#FFF" }]}>não</Text>
+        <TouchableOpacity 
+          style={[styles.Botoes, { marginTop: marginTop, marginLeft: marginLeft, position: "absolute" }]}
+          onPress={() => mudarPosBnt()}
+          >
+            <Text style={[styles.TextPergunta, { color: "#FFF" }]}>não</Text>
         </TouchableOpacity>
+        <Modal
+          transparent={true}
+          animationType="fade"
+          visible={visualizarModal}
+        >
+          <PressSim fechar={fecharModal}/>
+        </Modal>
       </View>
-
-      <TouchableOpacity></TouchableOpacity>
     </View>
   );
 }
